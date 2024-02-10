@@ -1,6 +1,6 @@
 const basket = [10, 20, 50, 40, 25, 10 ] 
 const list = [ 30, "sepuluh", 10, 233, 4285, "kosong"]
-const secondList = [ {}, 10, ["adsa", 3249, "0", -1 ], 1341, NaN, 0, "2", false, -2123, "-23", 34, "awsd" ]
+const secondList = [ {}, 10, , 1341, NaN, [2000], 0, "2", false, ["adsa", 3249, "0", -1 ], -2123, "-23", 34, "awsd" ]
 
  
 function stringFilter(array) {
