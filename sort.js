@@ -47,17 +47,26 @@ return numberOnly;
 function secondArray (array) {
   let firstResult = [];
   for (let i = 0; i < array.length; i++) {
-    if (typeof array[i] === 'number' && !isNaN(array[i])) {
+    if (typeof array[i] === 'number'&& !isNaN(array[i])) {
+      firstResult.push(array[i])
+    } else if (typeof array[i] === 'string') {
+      array[i] = parseFloat(array[i])
       firstResult.push(array[i])
     }
   }
+
   for (let j = 0; j < array[2].length; j++) {
     if (typeof array[2][j] === 'number') {
       firstResult.push(array[2][j])
+    } else if ( typeof array[2][j] === 'string') {
+      array[2][j] = parseFloat(array[2][j])
+      firstResult.push(array[2][j])
     }
   }
+
   return firstResult
 }
+
 
 let boom = secondArray(secondList)
 
