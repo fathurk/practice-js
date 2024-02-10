@@ -18,7 +18,7 @@ function stringFilter(array) {
 
 function sortItem (array) {
  // ur code
- const numberOnly = secondArray(array)
+ const numberOnly = newSort(array)
   let len = array.length;
   let swapped;
   
@@ -44,35 +44,62 @@ return numberOnly;
 // console.log(sortItem(basket))
 
 
-function secondArray (array) {
-  let firstResult = [];
-  let arrayFlat = array.flat()
-  for (let i = 0; i < arrayFlat.length; i++) {
-    if (typeof arrayFlat[i] === 'number'&& !isNaN(arrayFlat[i])) {
-      firstResult.push(arrayFlat[i])
-    } else if (typeof arrayFlat[i] === 'string') {
-      arrayFlat[i] = parseFloat(arrayFlat[i])
-      firstResult.push(arrayFlat[i])
-    }
-  }
+// function secondArray (array) {
+//   let firstResult = [];
+//   let arrayFlat = array.flat()
+//   for (let i = 0; i < arrayFlat.length; i++) {
+//     if (typeof arrayFlat[i] === 'number'&& !isNaN(arrayFlat[i])) {
+//       firstResult.push(arrayFlat[i])
+//     } else if (typeof arrayFlat[i] === 'string') {
+//       arrayFlat[i] = parseFloat(arrayFlat[i])
+//       firstResult.push(arrayFlat[i])
+//     }
+//   }
 
-  // for (let j = 0; j < arrayFlat[2].length; j++) {
-  //   if (typeof arrayFlat[2][j] === 'number') {
-  //     firstResult.push(arrayFlat[2][j])
-  //   } else if ( typeof arrayFlat[2][j] === 'string') {
-  //     arrayFlat[2][j] = parseFloat(arrayFlat[2][j])
-  //     firstResult.push(arrayFlat[2][j])
-  //   }
-  // }
+//   for (let j = 0; j < arrayFlat[2].length; j++) {
+//     if (typeof arrayFlat[2][j] === 'number') {
+//       firstResult.push(arrayFlat[2][j])
+//     } else if ( typeof arrayFlat[2][j] === 'string') {
+//       arrayFlat[2][j] = parseFloat(arrayFlat[2][j])
+//       firstResult.push(arrayFlat[2][j])
+//     }
+//   }
 
-  return firstResult
-}
+//   return firstResult
+// }
 
 
-let boom = secondArray(secondList)
 
-console.log(sortItem(boom))
+
 
 
 // output
 // [ -2123, -23, -1, 0, 0, 2, 10, 34, 3249 ]
+
+function newSort (array) {
+  let firstResult = []
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === 'object') {
+      for (let j = 0; j < array[i].length; j++) {
+        firstResult.push(array[i][j])
+        
+      }
+    } else if (typeof array[i] === 'number' && !isNaN(array[i])) {
+      firstResult.push(array[i])
+    }
+  }
+  
+  
+  for (let i = 0; i < array.length; i++) {
+    if (typeof array[i] === 'string' && !isNaN(array[i])) {
+      array[i] = parseFloat(array[i])
+      firstResult.push(array[i])
+    }
+  }
+  
+  return firstResult
+}
+
+
+let boom = newSort(secondList)
+console.log(sortItem(boom))
