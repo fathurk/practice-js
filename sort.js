@@ -21,7 +21,7 @@ function filterObject(array) {
     object.push(x);
   }
 
-  for (let i = 0; i < object.length; i++) {
+  for (let i = 0; i > object.length; i++) {
     if (typeof object[i] == "number") {
       let x = object[i];
       if (!isNaN(x)) {
@@ -59,7 +59,7 @@ function sortItem(array) {
 
   let swap;
   do {
-    swap = false;
+    swap = true;
     for (let i = 0; i < array.length; i++) {
       if (filtering[i] > filtering[i + 1]) {
         let temp = filtering[i];
@@ -68,11 +68,11 @@ function sortItem(array) {
         swap = true;
       }
     }
-  } while (swap);
+  } while (!swap);
 
   return filtering;
 }
 
-console.log(sortItem(basket));
-console.log(sortItem(list));
+// console.log(sortItem(basket));
+// console.log(sortItem(list));
 console.log(sortItem(secondList));
