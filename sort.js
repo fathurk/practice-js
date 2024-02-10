@@ -46,23 +46,24 @@ return numberOnly;
 
 function secondArray (array) {
   let firstResult = [];
-  for (let i = 0; i < array.length; i++) {
-    if (typeof array[i] === 'number'&& !isNaN(array[i])) {
-      firstResult.push(array[i])
-    } else if (typeof array[i] === 'string') {
-      array[i] = parseFloat(array[i])
-      firstResult.push(array[i])
+  let arrayFlat = array.flat()
+  for (let i = 0; i < arrayFlat.length; i++) {
+    if (typeof arrayFlat[i] === 'number'&& !isNaN(arrayFlat[i])) {
+      firstResult.push(arrayFlat[i])
+    } else if (typeof arrayFlat[i] === 'string') {
+      arrayFlat[i] = parseFloat(arrayFlat[i])
+      firstResult.push(arrayFlat[i])
     }
   }
 
-  for (let j = 0; j < array[2].length; j++) {
-    if (typeof array[2][j] === 'number') {
-      firstResult.push(array[2][j])
-    } else if ( typeof array[2][j] === 'string') {
-      array[2][j] = parseFloat(array[2][j])
-      firstResult.push(array[2][j])
-    }
-  }
+  // for (let j = 0; j < arrayFlat[2].length; j++) {
+  //   if (typeof arrayFlat[2][j] === 'number') {
+  //     firstResult.push(arrayFlat[2][j])
+  //   } else if ( typeof arrayFlat[2][j] === 'string') {
+  //     arrayFlat[2][j] = parseFloat(arrayFlat[2][j])
+  //     firstResult.push(arrayFlat[2][j])
+  //   }
+  // }
 
   return firstResult
 }
