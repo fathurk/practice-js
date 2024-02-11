@@ -62,3 +62,25 @@ function extractNumbers(arr) {
 
 const filteredNumbers = extractNumbers(secondList);
 console.log(filteredNumbers);
+
+
+var palindrome = ["ada", "lala", "racecar" ,"turbo", "civic", "jojo" ]
+
+
+function palindromeChecker (listString) {
+    // ur code
+    let reversed = listString.split("").reverse().join("")
+    return (reversed === listString)
+}
+
+const result = []
+
+for (let i = 0; i < palindrome.length; i++) {
+    if (palindromeChecker(palindrome[i])) {
+        result.push(palindrome[i])
+    }
+}
+
+console.log(result)
+// output
+// ['ada', 'racecar', 'civic' ]
