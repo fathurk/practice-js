@@ -1,5 +1,5 @@
 var palindrome = ["ada", "lala", "racecar", "turbo", "civic", "jojo"];
-
+var level2 = ["kuda", "HellnaH", "Sees", "DooD", "LayAL", "JOOJ", "kuUUk"]
 function palindromeChecker(listString) {
   // ma code
   let reversed = [];
@@ -28,4 +28,8 @@ function palindromeChecker(listString) {
   return result;
 }
 
-console.log(palindromeChecker(palindrome));
+// console.log(palindromeChecker(palindrome));
+console.log(palindromeChecker(level2));
+
+// output 
+// [ 'SeeS', 'DooD' 'LayAL', 'JOOJ', 'kuUUk'] 
