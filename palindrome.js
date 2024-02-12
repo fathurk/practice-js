@@ -7,11 +7,12 @@ function palindromeChecker (listString) {
   for (let i = 0; i < listString.length; i++) {
     let reversed = ""
     if(typeof listString[i] === 'string') {
-      const next = listString[i]
+      const next = listString[i].toLowerCase()
       for (let j = next.length - 1; j >= 0; j--) {
+        next[j] = next[j].toLowerCase()
         reversed += next[j]
       }
-    if (reversed === listString[i]) {
+    if (reversed === next) {
       result.push(listString[i])
     }
     }
@@ -19,7 +20,7 @@ function palindromeChecker (listString) {
   return result
 }
 
-// console.log(palindromeChecker(palindrome))
+console.log(palindromeChecker(palindrome))
 // output
 // ['ada', 'racecar', 'civic' ]
 
